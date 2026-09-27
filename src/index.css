@@ -1,0 +1,1127 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17202a;
+  background: #f3f5f7;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+  position: relative;
+  z-index: 10;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #d9dee3;
+
+  padding: 16px 24px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.topbar h1 {
+  margin: 0 0 4px;
+
+  font-size: 22px;
+}
+
+.topbar p {
+  margin: 0;
+
+  color: #66717d;
+
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+
+  gap: 10px;
+}
+
+button {
+  border: 0;
+
+  border-radius: 7px;
+
+  padding: 10px 17px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+button.primary {
+  background: #1473e6;
+
+  color: #ffffff;
+}
+
+button.secondary {
+  background: #e9edf1;
+
+  color: #27313a;
+}
+
+button:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(360px, 460px)
+    minmax(0, 1fr);
+
+  gap: 22px;
+
+  padding: 22px;
+
+  max-width: 1700px;
+
+  margin: auto;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.form-card {
+  width: 100%;
+
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dce1e6;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  height: max-content;
+}
+
+.form-section {
+  padding: 0 0 18px;
+
+  margin-bottom: 18px;
+
+  border-bottom: 1px solid #e3e7eb;
+}
+
+.form-section h2 {
+  font-size: 15px;
+
+  margin: 0 0 13px;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field span {
+  font-size: 12px;
+
+  color: #4c5965;
+
+  font-weight: 700;
+}
+
+.field b {
+  color: #d33;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  border: 1px solid #cdd4da;
+
+  border-radius: 6px;
+
+  padding: 9px 10px;
+
+  outline: none;
+
+  background: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #1473e6;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(20, 115, 230, 0.1);
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+/* =========================================================
+   VERIFICATION
+========================================================= */
+
+.verification-note {
+  border: 1px solid #cfe1f8;
+
+  background: #f1f7ff;
+
+  padding: 10px;
+
+  border-radius: 7px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  font-size: 11px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message {
+  margin-top: 12px;
+
+  padding: 10px;
+
+  border-radius: 7px;
+
+  background: #eef8f0;
+
+  color: #256b32;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.preview {
+  min-width: 0;
+
+  width: 100%;
+
+  overflow: visible;
+}
+
+.preview-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.preview-title h2 {
+  font-size: 16px;
+
+  margin: 0;
+}
+
+.preview-title span {
+  color: #697681;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PREVIEW STACK
+========================================================= */
+
+.preview-stack {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  width: 100%;
+
+  align-items: flex-start;
+
+  overflow: visible;
+
+  padding-bottom: 20px;
+}
+
+
+/* =========================================================
+   CERTIFICATE PAGE
+========================================================= */
+
+.certificate-page {
+  width: 794px;
+
+  min-width: 794px;
+
+  height: 1123px;
+
+  min-height: 1123px;
+
+  background: #ffffff;
+
+  border: 2px solid #555555;
+
+  padding: 22px 25px 18px;
+
+  color: #111111;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.08);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  position: relative;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.certificate-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  border-bottom: 1px solid #222;
+
+  padding-bottom: 8px;
+
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.logo-box {
+  width: 60px;
+
+  height: 42px;
+
+  border: 2px solid #536e89;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  color: #536e89;
+
+  transform: rotate(-7deg);
+}
+
+.company {
+  font-size: 17px;
+
+  font-weight: 800;
+
+  color: #168ba3;
+}
+
+.iso {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  margin-top: 3px;
+}
+
+.title-area {
+  text-align: right;
+}
+
+.doc-title {
+  font-size: 19px;
+
+  color: #1590a7;
+
+  font-weight: 800;
+
+  margin-top: 10px;
+}
+
+.copy-label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   CERTIFICATE NUMBER
+========================================================= */
+
+.certificate-no {
+  font-size: 11px;
+
+  margin: 9px 0;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   VEHICLE + QR
+========================================================= */
+
+.vehicle-qr-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    155px;
+
+  gap: 8px;
+
+  align-items: stretch;
+
+  flex-shrink: 0;
+}
+
+.vehicle-details-section {
+  margin-top: 7px;
+}
+
+.vehicle-details-section .cert-grid {
+  min-height: 134px;
+}
+
+
+/* =========================================================
+   CERTIFICATE SECTION
+========================================================= */
+
+.cert-section {
+  border: 1px solid #444;
+
+  margin-top: 7px;
+
+  flex-shrink: 0;
+}
+
+.cert-section h3 {
+  font-size: 11px;
+
+  margin: 0;
+
+  padding: 4px 6px;
+
+  background: #f1f3f4;
+
+  border-bottom: 1px solid #555;
+}
+
+
+/* =========================================================
+   CERTIFICATE GRID
+========================================================= */
+
+.cert-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr 1fr;
+
+  position: relative;
+}
+
+.cert-grid > div {
+  min-height: 34px;
+
+  padding: 5px 7px;
+
+  border-right: 1px solid #777;
+
+  border-bottom: 1px solid #aaa;
+
+  font-size: 9px;
+
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+
+  word-break: break-word;
+}
+
+.cert-grid > div:nth-child(3n) {
+  border-right: 0;
+}
+
+.cert-grid b {
+  display: inline-block;
+
+  margin-right: 4px;
+}
+
+
+/* =========================================================
+   QR BOX
+========================================================= */
+
+.qr-box {
+  border: 1px solid #444;
+
+  margin-top: 7px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 134px;
+
+  flex-shrink: 0;
+}
+
+.qr-box h3 {
+  font-size: 11px;
+
+  margin: 0;
+
+  padding: 4px 6px;
+
+  background: #f1f3f4;
+
+  border-bottom: 1px solid #555;
+
+  text-align: center;
+}
+
+.qr-box-content {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 6px;
+}
+
+.qr-box-content svg {
+  width: 112px;
+
+  height: 112px;
+
+  display: block;
+}
+
+
+/* =========================================================
+   VEHICLE OWNER DETAILS
+========================================================= */
+
+.owner-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    0.9fr
+    1.8fr;
+
+  min-height: 46px;
+
+  align-items: stretch;
+
+  font-size: 9px;
+
+  width: 100%;
+}
+
+.owner-grid > div {
+  padding: 7px;
+
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+
+  word-break: break-word;
+
+  border-right: 1px solid #aaa;
+
+  line-height: 1.35;
+}
+
+.owner-grid > div:last-child {
+  border-right: 0;
+}
+
+.owner-grid .address {
+  border-left: 0;
+
+  border-right: 0;
+
+  line-height: 1.35;
+
+  overflow-wrap: anywhere;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   INSTALLER DETAILS INSIDE SLD
+========================================================= */
+
+.installer-details-cell {
+  min-height: 40px !important;
+
+  padding: 7px !important;
+
+  font-size: 9px;
+
+  line-height: 1.35;
+
+  overflow-wrap: anywhere;
+
+  word-break: break-word;
+}
+
+.installer-details-cell b {
+  display: inline-block;
+
+  margin-right: 4px;
+}
+
+.installer-address-cell {
+  grid-column: span 2;
+
+  border-right: 0 !important;
+}
+
+
+/* =========================================================
+   CERTIFICATE BOTTOM
+   DECLARATION NOW IMMEDIATELY BELOW SLD
+========================================================= */
+
+.certificate-bottom {
+  margin-top: 7px;
+
+  width: 100%;
+
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   DECLARATION
+========================================================= */
+
+.declaration-box {
+  border: 1px solid #444;
+
+  margin-top: 0;
+
+  flex-shrink: 0;
+}
+
+.declaration-box h3 {
+  font-size: 11px;
+
+  margin: 0;
+
+  padding: 4px 6px;
+
+  background: #f1f3f4;
+
+  border-bottom: 1px solid #555;
+}
+
+.declaration {
+  font-size: 8.5px;
+
+  line-height: 1.35;
+
+  margin: 0;
+
+  padding: 8px;
+
+  text-align: justify;
+
+  overflow-wrap: anywhere;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   PHOTO SECTION
+   PHOTOS STAY AT BOTTOM
+========================================================= */
+
+.photo-section {
+  width: 100%;
+
+  border: 1px solid #444;
+
+  margin-top: auto;
+
+  background: #ffffff;
+
+  flex-shrink: 0;
+}
+
+.photo-section-title {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  padding: 4px 6px;
+
+  background: #f1f3f4;
+
+  border-bottom: 1px solid #555;
+}
+
+.photo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 6px;
+
+  padding: 6px;
+}
+
+
+/* =========================================================
+   PHOTO BOX
+========================================================= */
+
+.photo-box {
+  width: 100%;
+
+  height: 105px;
+
+  border: 1px solid #222;
+
+  background: #ffffff;
+
+  padding: 3px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   PHOTO TITLE
+========================================================= */
+
+.photo-title {
+  height: 17px;
+
+  flex-shrink: 0;
+
+  border-bottom: 1px solid #222;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   CERTIFICATE PHOTO
+========================================================= */
+
+.certificate-photo {
+  width: 100%;
+
+  height: 81px;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: 2px auto 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   EMPTY PHOTO
+========================================================= */
+
+.empty-photo {
+  width: 100%;
+
+  height: 81px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 8px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   COMPANY ADDRESS
+========================================================= */
+
+.certificate-page footer {
+  width: 100%;
+
+  margin-top: 4px;
+
+  padding: 0 4px;
+
+  font-size: 8.5px;
+
+  line-height: 1.2;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+
+  word-break: break-word;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
+
+.image-upload-field {
+  width: 100%;
+}
+
+.image-upload-field .field {
+  width: 100%;
+}
+
+.upload-preview {
+  width: 100%;
+
+  margin-top: 6px;
+
+  padding: 5px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 5px;
+
+  background: #fafafa;
+}
+
+.upload-preview img {
+  width: 100%;
+
+  max-height: 150px;
+
+  object-fit: contain;
+
+  display: block;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   REMOVE IMAGE
+========================================================= */
+
+.remove-image {
+  margin-top: 6px;
+
+  padding: 5px 9px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.remove-image:hover {
+  background: #b91c1c;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .layout {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding: 18px;
+  }
+
+  .form-card {
+    width: 100%;
+
+    max-width: 800px;
+  }
+
+  .preview {
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: visible;
+  }
+
+  .preview-stack {
+    width: max-content;
+
+    align-items: flex-start;
+
+    overflow: visible;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .topbar {
+    padding: 12px 15px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+
+  .layout {
+    padding: 10px;
+
+    gap: 15px;
+  }
+
+  .form-card {
+    padding: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .preview {
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+  .preview-stack {
+    width: max-content;
+
+    align-items: flex-start;
+  }
+
+  .certificate-page {
+    width: 794px;
+
+    min-width: 794px;
+
+    height: 1123px;
+
+    min-height: 1123px;
+  }
+
+  .vehicle-qr-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      145px;
+  }
+
+  .qr-box-content svg {
+    width: 105px;
+
+    height: 105px;
+  }
+
+  .photo-grid {
+    gap: 3px;
+
+    padding: 4px;
+  }
+
+  .photo-box {
+    height: 85px;
+  }
+
+  .photo-title {
+    height: 14px;
+
+    font-size: 7px;
+  }
+
+  .certificate-photo {
+    height: 65px;
+  }
+
+  .empty-photo {
+    height: 65px;
+
+    font-size: 7px;
+  }
+
+  .certificate-page footer {
+    font-size: 7px;
+  }
+}
