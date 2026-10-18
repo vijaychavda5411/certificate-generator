@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { Analytics } from "@vercel/analytics/react";
 
 
 
@@ -1186,7 +1187,7 @@ export default function App() {
   ======================================================= */
 
   return (
-
+    <>
     <main className="app">
 
 
@@ -1677,5 +1678,7 @@ export default function App() {
       </div>
 
     </main>
+    <Analytics />
+    </>
   );
 }
